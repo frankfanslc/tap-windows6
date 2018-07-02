@@ -1,0 +1,1 @@
+python buildtap.py -c -b --ti=devcon --sign --cert="www.yourwebsite.com" --certfile="c:\temp\testcert.pfx" --certpw="lol"
