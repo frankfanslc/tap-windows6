@@ -37,7 +37,7 @@ class BuildTAPWindows(object):
         # The installation script has a set of architecture-specific paths.
         # The driver kit build system has a set of architecture-specific parameters.
         # architecture -> build system parameter map
-        self.architecture_platform_map = {"i386": "Win32", "amd64": "x64", "arm64": "arm64"}
+        self.architecture_platform_map = {"amd64": "x64"}
         # architecture -> build system folder name fragment map
         self.architecture_platform_folder_map = {"i386": "", "amd64": "x64", "arm64": "arm64"}
         # supported arch names, also installation script folder names
@@ -285,11 +285,6 @@ class BuildTAPWindows(object):
 
         print("***** Generated files")
         self.dump_dist()
-
-        tapbase = "tap6"
-        self.make_tarball(os.path.join(self.top, tapbase+".tar.gz"),
-                          self.dist_path(),
-                          tapbase)
 
     # package the produced files into an NSIS installer
     def package(self):
